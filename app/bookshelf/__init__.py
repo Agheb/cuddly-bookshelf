@@ -13,7 +13,7 @@ os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 """ Flask App Creation """
 
 app = Flask(__name__)
-app.config.from_object(config['dev'])
+app.config.from_object(config['postgres'])
 # supress warnings caused by Flask-SQLAlchemy Extension
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)

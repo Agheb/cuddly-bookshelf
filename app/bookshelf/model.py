@@ -23,9 +23,8 @@ class Genre(db.Model):
     __tablename__ = 'genre'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), nullable=False)
-    items = db.relationship('Item', backref=db.backref(
-        'genre', lazy='joined'), lazy='dynamic')
-
+    items = db.relationship('Item', backref='genre', cascade="all, delete-orphan", lazy='dynamic')
+    
     def __str__(self):
         return self.name
 

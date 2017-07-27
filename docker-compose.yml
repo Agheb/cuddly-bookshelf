@@ -1,0 +1,30 @@
+version: '2'
+services:
+  web:
+    restart: always
+    build: .
+    ports: 
+      - "80:80"
+    volumes:
+    - ./app:/app
+    depends_on:
+      - postgres
+
+  data:
+
+    image: postgres:9.6
+    volumes:
+      - /var/lib/postgresql
+    command: "true"
+
+  postgres:
+    restart: always
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER : foo
+      POSTGRES_PASSWORD : foobar
+      POSTGRES_DB : prod
+    volumes_from:
+      - data
+    ports:
+      - "5432:5432"

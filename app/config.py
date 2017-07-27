@@ -21,9 +21,9 @@ class Config:
     SECRET_KEY = os.environ.get("SECRET_KEY") or "Wl17sm090nFlvE-cmx9Q4hRm"
     # Uploads
     UPLOADS_DEFAULT_DEST = basedir + '/bookshelf/static/img/'
-    UPLOADS_DEFAULT_URL = 'http://localhost:5003/static/img/'
+    UPLOADS_DEFAULT_URL = 'http://localhost:80/static/img/'
     UPLOADED_IMAGES_DEST = basedir + '/bookshelf/static/img/'
-    UPLOADED_IMAGES_URL = 'http://localhost:5003/static/img/'
+    UPLOADED_IMAGES_URL = 'http://localhost:80/static/img/'
 
 
 class DevConfig(Config):
@@ -33,11 +33,15 @@ class DevConfig(Config):
 
 class ProdConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, "prod.db")
+    POSTGRES_USER = 'foo'
+    POSTGRES_PASSWORD = 'foobar'
+    POSTGRES_DB = 'prod'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://' + POSTGRES_USER + \
+        ':' + POSTGRES_PASSWORD + '@postgres:5432/' + POSTGRES_DB
 
 
 config = {
     "dev": DevConfig,
-    "prod": ProdConfig,
+    "postgres": ProdConfig,
     "default": DevConfig
 }

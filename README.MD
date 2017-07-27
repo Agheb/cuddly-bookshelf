@@ -1,4 +1,4 @@
-# Overview 
+# Deploying a Python Flask App with Docker on AWS Lightsail 
 
 A simple webapp made with Flask to keep track of the books I'm reading.
 It stores a collection of book titles and anyone with access via a google account can add, update and delete books.
@@ -24,6 +24,7 @@ $ run app.py
 * Preview cover image before upload and store it in filesystem.
 * not responsive at the moment.
 
+docker build -t "bookshelf_app:dockerfile" .
 
 
 
