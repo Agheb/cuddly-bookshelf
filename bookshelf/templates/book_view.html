@@ -1,0 +1,20 @@
+{% extends "base.html" %} 
+{% block content %}
+<article class="cf ph3 ph5-ns pv5">
+    <header class="fn fl-ns w-30">
+        <img class="" src="{{book.img_url}}" alt="">
+    </header>
+    <div class="fn fl-ns w-70-ns pl6">
+        <h1 class="f2 lh-title fw6 mb3 mt0 pt0">
+            {{ book.title }}
+        </h1>
+        <h2 class="f4 mid-gray lh-title">
+            {{ book.author }}
+        </h2>
+        <time class="f6 tracked gray">added at {{ book.added_at.date() }}</time>
+        <p class="f5 lh-copy measure mt4">
+            {{book.description}}
+        </p>
+    </div>
+</article>
+{% endblock %}
