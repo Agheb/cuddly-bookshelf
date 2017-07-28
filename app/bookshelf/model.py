@@ -42,7 +42,7 @@ class Item(db.Model):
     added_at = db.Column(db.DateTime, default=datetime.datetime.utcnow())
     title = db.Column(db.String(250), nullable=False)
     author = db.Column(db.String(250), nullable=False)
-    description = db.Column(db.String(250), default=None, nullable=True)
+    description = db.Column(db.String(1000), default=None, nullable=True)
     img_filename = db.Column(db.String(250), default=None, nullable=True)
     img_url = db.Column(db.String(250), default=None, nullable=True)
     owner = db.Column(db.Integer, default=0, nullable=True)
