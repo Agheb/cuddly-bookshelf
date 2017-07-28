@@ -21,9 +21,9 @@ class Config:
     SECRET_KEY = os.environ.get("SECRET_KEY") or "Wl17sm090nFlvE-cmx9Q4hRm"
     # Uploads
     UPLOADS_DEFAULT_DEST = basedir + '/bookshelf/static/img/'
-    UPLOADS_DEFAULT_URL = 'http://localhost:80/static/img/'
+    UPLOADS_DEFAULT_URL = 'http://www.amanuelg.me/static/img/'
     UPLOADED_IMAGES_DEST = basedir + '/bookshelf/static/img/'
-    UPLOADED_IMAGES_URL = 'http://localhost:80/static/img/'
+    UPLOADED_IMAGES_URL = 'http://www.amanuelg.me/static/img/'
 
 
 class DevConfig(Config):
