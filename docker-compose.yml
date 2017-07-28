@@ -2,11 +2,14 @@ version: '2'
 services:
   web:
     container_name: 'web'
-    build: .
-    ports: 
+    # point to Dockerfile to build an image and use it afterwards
+    build: .  
+    ports:
+    # map ports from HOST:CONTAINER
       - "80:80"
     volumes:
     - ./app:/app
+    # link to other container postgres and its service
     depends_on:
       - postgres
 
@@ -14,6 +17,7 @@ services:
     container_name: 'postgres'
     image: postgres:latest
     environment:
+      # set the same ENV variables specified in config.py
       POSTGRES_USER : foo
       POSTGRES_PASSWORD : foobar
       POSTGRES_DB : prod
