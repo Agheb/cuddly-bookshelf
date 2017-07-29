@@ -56,6 +56,18 @@ $ chmod 644 .ssh/authorized_keys
 1. Configure the time zone `sudo dpkg-reconfigure tzdata`
 2. Set it to `UTC`
 
+## Configuring Firewall
+Configure firewall rules using UFW. Check to see if ufw is active: `sudo ufw status`. If not active, lets add some rules
+```
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 2200/tcp
+sudo ufw allow 80/tcp or sudo ufw allow www (either one of these commands will work)
+sudo ufw allow 123/udp
+```
+Now, enable the rules: `sudo ufw enable`
+
+
 # Part 2: Dockerize Bookshelf App 
 To suit my needs, i made the extra effort to learn the in and out of Docker.
 For this task, we will spin up two containers: one named `web` to run given python app with `uWSGI` and `Nginx`. The other named `postgres` to run a `PostgresSQL` database server. 
