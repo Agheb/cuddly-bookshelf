@@ -57,8 +57,8 @@ $ chmod 644 .ssh/authorized_keys
 2. Set it to `UTC`
 
 # Part 2: Dockerize Bookshelf App 
-To suit my needs, i made the extra effort to learn the in and out of Docker.
-For this task, we will spin up two containers: one named `web` to run given python app with `uWSGI` and `Nginx`. The other named `postgres` to run a `PostgresSQL` database server. 
+To suit my needs, i made the extra effort to learn the ins and outs of Docker.
+For this task, we will spin up two containers: one named `web` to run our python app with `uWSGI` and `Nginx`. The other named `postgres` to run a `PostgresSQL` database server. 
 
 ## Prepare Bookshelf Flask App for Production;
 1. Replace/Copy app content in folder `app`
@@ -159,8 +159,7 @@ $ docker-compose run web /usr/local/bin/python /app/db_setup.py
 ```
 
 # Issues encountered
- * Bookshelf is using Google for login authentification.Public IPs are not allowed. You need a public top-level domain. 
-   Luckily if you are a student, you can get one for free at [Namescheap](https://nc.me/)
+ * Bookshelf is using Google for login authentification. Public IPs are not allowed to handle responses from Google's authorization server. You need a public top-level domain. Luckily if you are a student, you can get one for free at [Namescheap](https://nc.me/)
 
 # Resources
  * [Server Setup with Ubuntu](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04)
