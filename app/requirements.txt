@@ -36,6 +36,6 @@ SQLAlchemy==1.1.10
 tempora==1.8
 urllib3==1.21.1
 uWSGI==2.0.15
-Werkzeug==0.12.2
+Werkzeug==0.15.3
 wrapt==1.10.10
 WTForms==2.1
