@@ -34,7 +34,7 @@ singledispatch==3.4.0.3
 six==1.10.0
 SQLAlchemy==1.1.10
 tempora==1.8
-urllib3==1.21.1
+urllib3==1.26.5
 uWSGI==2.0.15
 Werkzeug==0.12.2
 wrapt==1.10.10
